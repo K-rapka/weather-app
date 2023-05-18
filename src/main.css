@@ -1,64 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
-/* Reset and base styles  */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap');
+
 * {
-	padding: 0px;
-	margin: 0px;
-	border: none;
+    padding: 0px;
+    margin: 0px;
+    border: none;
 }
 
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* Links */
 
-a, a:link, a:visited  {
+a,
+a:link,
+a:visited {
     text-decoration: none;
 }
 
-a:hover  {
+a:hover {
     text-decoration: none;
 }
 
 /* Common */
 
-aside, nav, footer, header, section, main {
-	display: block;
+aside,
+nav,
+footer,
+header,
+section,
+main {
+    display: block;
 }
 
-ul, ul li {
-	list-style: none;
+ul,
+ul li {
+    list-style: none;
 }
 
 img {
-	vertical-align: top;
+    vertical-align: top;
 }
 
-img, svg {
-	max-width: 100%;
-	height: auto;
+img,
+svg {
+    max-width: 100%;
+    height: auto;
 }
 
 address {
-  font-style: normal;
+    font-style: normal;
 }
 
 /* Form */
 
-input, textarea, button, select {
-	font-family: inherit;
+input,
+textarea,
+button,
+select {
+    font-family: inherit;
     font-size: inherit;
     color: inherit;
     background-color: transparent;
 }
 
 input::-ms-clear {
-	display: none;
+    display: none;
 }
 
-button, input[type="submit"] {
+button,
+input[type="submit"] {
     display: inline-block;
     box-shadow: none;
     background-color: transparent;
@@ -66,56 +79,63 @@ button, input[type="submit"] {
     cursor: pointer;
 }
 
-input:focus, input:active,
-button:focus, button:active {
+input:focus,
+input:active,
+button:focus,
+button:active {
     outline: none;
 }
 
 button::-moz-focus-inner {
-	padding: 0;
-	border: 0;
+    padding: 0;
+    border: 0;
 }
 
 label {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 legend {
-	display: block;
+    display: block;
 }
 
 /* MANI STYLES */
 
 
 
-.main{
+.main {
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-style: normal;
     font-weight: 400;
     color: rgba(242, 251, 255, 0.7);
 
 }
-.main.sunny{
+
+.main.sunny {
     background-color: #42C2FF;
 }
-.main.night{
+
+.main.night {
     background-color: #712B75;
 }
-.main.rainy{
+
+.main.rainy {
     background-color: #A8AAC4;
 }
-.main.snowy{
+
+.main.snowy {
     background-color: #6BA7CC;
 }
 
-.weatherScreen{
+.weatherScreen {
+    position: relative;
     background: linear-gradient(252.44deg, rgba(239, 255, 253, 0.7) 0%, rgba(239, 255, 253, 0) 100%);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(9px);
     border-radius: 85px;
     width: 60vw;
     height: 70vh;
@@ -123,33 +143,105 @@ legend {
 
     z-index: 100;
 }
-.container{
+
+.container {
     width: 60vw;
     height: 70vh;
 }
 
 
-.pattern{
-    --sun:15rem;
+.pattern {
+    --sun: 17rem;
     background: no-repeat;
     background-size: var(--sun) var(--sun);
-    background-image:url(./assets/sun.svg);
     height: var(--sun);
     width: var(--sun);
     position: absolute;
     top: 0px;
-    right: 0px;
+    right: 12%;
 }
 
-form{
+.pattern.sunny {
+    background-image: url(./assets/sun.svg);
+}
+
+.pattern.night {
+    background-image: url(./assets/moon.svg);
+
+}
+
+.pattern.rainy {
+    background-image: url(./assets/rain.svg);
+
+}
+
+.pattern.snowy {
+    background-image: url(./assets/snow.svg);
+
+}
+
+/* SEARCH STYLES */
+
+
+form {
     display: flex;
     justify-content: center;
 }
-.search{
-    background: linear-gradient(269.42deg, #F2FBFF -1.71%, rgba(242, 251, 255, 0.3) 100%);    border-radius: 18px;
+
+.search {
+    background: linear-gradient(269.42deg, #F2FBFF -1.71%, rgba(242, 251, 255, 0.3) 100%);
+    border-radius: 18px;
     color: #FFF;
 
     width: 30vw;
-    height: 3vh;
+    height: 2rem;
     padding: 1rem;
+    transition: all 0.5s;
+}
+.search:hover{
+    height: 3rem;
+}
+::placeholder{
+    color: #FFF;
+}
+
+/* FULL INFO STYLES */
+
+.weather,
+.wind {
+    margin: 9vh 0px 0px 2vw;
+    line-height: 2.5rem;
+}
+
+.weather {
+    font-size: 2rem;
+    margin: 9vh 0px 0px 2vw;
+}
+
+.weather div:nth-child(3)::after {
+    content: '';
+    background-repeat: no-repeat;
+    background-size: 2.3rem;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 1%;
+    vertical-align: middle;
+}
+.weather.sunny div:nth-child(3)::after{
+    background-image: url(./assets/minSun.svg);
+}
+.weather.night div:nth-child(3)::after{
+    background-image: url(./assets/minMoon.svg);
+}
+.weather.rainy div:nth-child(3)::after{
+    background-image: url(./assets/minRain.svg);
+}
+.weather.snowy div:nth-child(3)::after{
+    background-image: url(./assets/minSnow.svg);
+}
+
+.wind {
+    font-size: 1.5rem;
 }

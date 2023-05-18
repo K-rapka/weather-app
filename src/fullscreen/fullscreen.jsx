@@ -2,7 +2,7 @@ import React from "react";
 
 export const FullscreenApp = () => {
 
-    const weather = 'rainy'
+    const weather = 'sunny'
 
     return (
         <div className={`main ${weather}`}>

@@ -1,27 +1,29 @@
 import React from "react";
+import { Screen } from "./screen";
 
-export const FullscreenApp = () => {
+export const FullscreenApp = (props) => {
+    //FIX ERROR
+    if (props.fullWeather == undefined) { return }
 
-    const weather = 'sunny'
+    //THIS DAY
+    if (props.isThisDay) {
+        const fullWeather = {
+            name: props.fullWeather.name,
+            temp: Math.round(props.fullWeather.main.temp),
+            humidity: props.fullWeather.main.humidity,
+            windSpeed: Math.round(props.fullWeather.wind.speed),
+        }
 
-    return (
-        <div className={`main ${weather}`}>
-            <div className="container">
-                <div className={`weatherScreen ${weather}`}>
-                    <form><input className="search" type="text" placeholder="Search" /></form>
-                    <div className={`weather ${weather}`}>
-                        <div>Azerbaijan, Baku</div>
-                        <div>13°C</div>
-                        <div>Sunny</div>
-                    </div>
-                    <div className="wind">
-                        <div>Humidity: 40%</div>
-                        <div>Wind Speed: 13 km/h</div>
-                    </div>
-                </div>
-                <div className={`pattern ${weather}`}></div>
-            </div>
+        return (<Screen fullWeather={fullWeather} weather={props.weather} />)
+    }
 
-        </div>
-    )
+    //WEEK
+    const fullWeather = {
+        name: props.fullWeather,
+        temp: '2',
+        humidity: '3',
+        windSpeed: '4',
+
+    }
+    return (<Screen />)
 }

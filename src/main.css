@@ -167,7 +167,7 @@ legend {
 
 .pattern.night {
     background-image: url(./assets/moon.svg);
-
+    
 }
 
 .pattern.rainy {
@@ -234,6 +234,7 @@ form {
 }
 .weather.night div:nth-child(3)::after{
     background-image: url(./assets/minMoon.svg);
+    background-size: 2rem;
 }
 .weather.rainy div:nth-child(3)::after{
     background-image: url(./assets/minRain.svg);
@@ -246,10 +247,15 @@ form {
     font-size: 1.5rem;
 }
 
-
-.test{
-    width: 500px;
-    height: 500px;
-    background-color: red;
-    border: solid 2px black;
+.date{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
 }
+
+/* SLIDER STYLES */
+
+
+:root {
+    --swiper-navigation-color:rgba(242, 251, 255, 0.7);
+  }

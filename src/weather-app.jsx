@@ -20,7 +20,7 @@ const WeatherApp = () => {
   //WEATHER LOAD
   async function loadWeather() {
     const weather = await getWeather();
-    setWeatherNow(weather[1])
+    setWeatherNow(weather)
   }
   if (weatherNow == undefined) {
     loadWeather()
@@ -30,8 +30,8 @@ const WeatherApp = () => {
 
   return (
     <Swiper slidesPerView={1} navigation modules={[Navigation]}>
-      <SwiperSlide><FullscreenApp weather={'rainy'} fullWeather = {weatherNow} isThisDay = {true}/></SwiperSlide>
-      <SwiperSlide><FullscreenApp weather={'rainy'} fullWeather = {weatherNow} isThisDay = {true}/></SwiperSlide>
+      <SwiperSlide><FullscreenApp fullWeather = {weatherNow} isThisDay = {true}/></SwiperSlide>
+      <SwiperSlide><FullscreenApp fullWeather = {weatherNow} isThisDay = {false}/></SwiperSlide>
     </Swiper>
   )
 }

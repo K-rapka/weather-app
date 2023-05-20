@@ -116,22 +116,6 @@ legend {
 
 }
 
-.main.sunny {
-    background-color: #42C2FF;
-}
-
-.main.night {
-    background-color: #712B75;
-}
-
-.main.rainy {
-    background-color: #A8AAC4;
-}
-
-.main.snowy {
-    background-color: #6BA7CC;
-}
-
 .weatherScreen {
     position: relative;
     background: linear-gradient(252.44deg, rgba(239, 255, 253, 0.7) 0%, rgba(239, 255, 253, 0) 100%);
@@ -151,7 +135,7 @@ legend {
 
 
 .pattern {
-    --sun: 17rem;
+    --sun: 20rem;
     background: no-repeat;
     background-size: var(--sun) var(--sun);
     height: var(--sun);
@@ -159,25 +143,6 @@ legend {
     position: absolute;
     top: 0px;
     right: 12%;
-}
-
-.pattern.sunny {
-    background-image: url(./assets/sun.svg);
-}
-
-.pattern.night {
-    background-image: url(./assets/moon.svg);
-    
-}
-
-.pattern.rainy {
-    background-image: url(./assets/rain.svg);
-
-}
-
-.pattern.snowy {
-    background-image: url(./assets/snow.svg);
-
 }
 
 /* SEARCH STYLES */
@@ -189,17 +154,16 @@ form {
 }
 
 .search {
-    background: linear-gradient(269.42deg, #F2FBFF -1.71%, rgba(242, 251, 255, 0.3) 100%);
+    background: linear-gradient(269.42deg, #f2fbffe2 -1.71%, rgba(242, 251, 255, 0.3) 100%);
     border-radius: 18px;
     color: #FFF;
 
     width: 30vw;
     height: 2rem;
     padding: 1rem;
-    transition: all 0.5s;
 }
 .search:hover{
-    height: 3rem;
+    background:linear-gradient(269.42deg, #f2fbffec -1.71%, rgba(242, 251, 255, 0.505) 100%) ;
 }
 ::placeholder{
     color: #FFF;
@@ -228,19 +192,6 @@ form {
     height: 2.5rem;
     margin-left: 1%;
     vertical-align: middle;
-}
-.weather.sunny div:nth-child(3)::after{
-    background-image: url(./assets/minSun.svg);
-}
-.weather.night div:nth-child(3)::after{
-    background-image: url(./assets/minMoon.svg);
-    background-size: 2rem;
-}
-.weather.rainy div:nth-child(3)::after{
-    background-image: url(./assets/minRain.svg);
-}
-.weather.snowy div:nth-child(3)::after{
-    background-image: url(./assets/minSnow.svg);
 }
 
 .wind {

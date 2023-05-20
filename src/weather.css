@@ -1,0 +1,72 @@
+/* MAIN */
+
+.main.clearSkyDay, .main.fewCloudsDay, .main.scatteredCloudsDay,.main.brokenCloudsDay{
+    background-color: #42C2FF;
+}
+
+.main.clearSkyNight, .main.fewCloudsNight, .main.scatteredCloudsNight,.main.brokenCloudsNight,.main.mistNight {
+    background-color: #712B75;
+}
+
+.main.showerRainDay,.main.rainDay,.main.thunderstormDay,.main.mistDay,.main.showerRainNight,.main.rainNight,.main.thunderstormNight {
+    background-color: #A8AAC4;
+}
+
+.main.snowDay,.main.snowNight {
+    background-color: #6BA7CC;
+}
+/* MINI ICON */
+
+.weather.clearSkyDay div:nth-child(3)::after, .weather.fewCloudsDay div:nth-child(3)::after, .weather.scatteredCloudsDay div:nth-child(3)::after,.weather.brokenCloudsDay div:nth-child(3)::after{
+    background-image: url(./assets/miniIcons/minSun.svg);
+    
+}
+.weather.clearSkyNight div:nth-child(3)::after, .weather.fewCloudsNight div:nth-child(3)::after, .weather.scatteredCloudsNight div:nth-child(3)::after,.weather.brokenCloudsNight div:nth-child(3)::after{
+    background-image: url(./assets/miniIcons/minMoon.svg);
+    background-size: 2rem;
+}
+.weather.showerRainDay div:nth-child(3)::after,.weather.rainDay div:nth-child(3)::after,.weather.thunderstormDay div:nth-child(3)::after,.weather.mistDay div:nth-child(3)::after,.weather.showerRainNight div:nth-child(3)::after,.weather.rainNight div:nth-child(3)::after,.weather.thunderstormNight div:nth-child(3)::after,.weather.mistNight div:nth-child(3)::after{
+    background-image: url(./assets/miniIcons/minRain.svg);
+}
+.weather.snowDay div:nth-child(3)::after,.weather.snowNight div:nth-child(3)::after{
+    background-image: url(./assets/miniIcons/minSnow.svg);
+}
+
+
+
+
+/* PATTERN */
+
+.pattern.clearSkyDay {
+    background-image: url(./assets/clearSkyDay.svg);
+}
+.pattern.clearSkyNight {
+    background-image: url(./assets/clearSkyNight.svg);
+}
+
+.pattern.fewCloudsDay,.pattern.scatteredCloudsDay,.pattern.brokenCloudsDay{
+    background-image: url(./assets/CloudsDay.svg);
+}
+.pattern.fewCloudsNight,.pattern.scatteredCloudsNight,.pattern.brokenCloudsNight{
+    background-image: url(./assets/CloudsNight.svg);
+}
+
+.pattern.showerRainDay,pattern.rainDay,.pattern.showerRainNight,pattern.rainNight{
+    background-image: url(./assets/rain.svg);
+}
+
+.pattern.thunderstormDay,.pattern.thunderstormNight{
+    background-image: url(./assets/thunder.svg);
+}
+
+.pattern.snowDay,.pattern.snowNight{
+    background-image: url(./assets/snow.svg);
+}
+
+.pattern.mistDay{
+    background-image: url(./assets/fogDay.svg);
+}
+.pattern.mistNight{
+    right: 5%;
+    background-image: url(./assets/fogNight.svg);
+}

@@ -27,7 +27,7 @@ export const days = {
   4:'Thursday',
   5:'Friday',
   6:'Saturday',
-  7:'Sunday'
+  0:'Sunday'
 }
 
 //FOR WEATHER INFO
@@ -54,6 +54,7 @@ export const weatherIcons = {
 export async function getWeather() {
   const key = "a658ba0845604c764bdb36bd3ed9b4b6";
   const position = await navigation();
+  console.log(position);
   const weatherNow = await getWeatherNow(position.coords.latitude, position.coords.longitude, key);
   console.log(weatherNow);
   return (weatherNow);
